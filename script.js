@@ -41,6 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 addMessage("Oops! Something went wrong with the calculation.", 'bot');
             }
         }
+        else if (userMessage.toLowerCase().includes('date')) {
+            const currentDate = new Date().toLocaleDateString();
+            addMessage(`${currentDate}`, 'bot');
+        }
+        else if (userMessage.toLowerCase().includes('time')) {
+            const currentTime = new Date().toLocaleTimeString();
+            addMessage(`${currentTime}`, 'bot');
+        }
+        
         else if (userMessage.toLowerCase().includes('hello')) {
             const botResponse = "Hello! How can I assist you today?";
             addMessage(botResponse, 'bot');
